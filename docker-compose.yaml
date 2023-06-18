@@ -1,6 +1,6 @@
 version: "3"
 services:
-  pgvector:
+  postgres-multimodal:
     build:
       context: .
       dockerfile: Dockerfile
@@ -14,21 +14,21 @@ services:
     volumes:
       - ./migrations/:/migrations/
     networks:
-      - pgvector
+      - postgres-multimodal
     ports:
       - "5432:5432"
   liquibase:
     image: liquibase/liquibase
-    command: --hub-mode=off --headless=true --changeLogFile=changelog/root.changelog.xml --url=jdbc:postgresql://pgvector:5432/postgres --username=postgres --password=password update
+    command: --hub-mode=off --headless=true --changeLogFile=changelog/root.changelog.xml --url=jdbc:postgresql://postgres-multimodal:5432/postgres --username=postgres --password=password update
     volumes:
       - ./migrations/:/liquibase/changelog
     depends_on:
-      - pgvector
+      - postgres-multimodal
     links:
-      - pgvector
+      - postgres-multimodal
     networks:
-      - pgvector
+      - postgres-multimodal
     restart: on-failure
 
 networks:
-  pgvector:
+  postgres-multimodal:

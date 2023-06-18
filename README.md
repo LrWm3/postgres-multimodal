@@ -1,6 +1,6 @@
 # postgres-multimodal
 
-This repository contains a simple multi-modal example of PostgreSQL, showcasing various extensions and functionalities. 
+This repository contains a simple multi-modal example of PostgreSQL, showcasing various extensions and functionalities.
 
 It includes an example Liquibase changelog file to demonstrate how to configure Liquibase to manage database migrations using sql files found in a local directory.
 
@@ -18,17 +18,21 @@ The multi-modal image is based off of timescaledbs' wonderful timescaledb-ha ima
 
 To play with 'postgres-multimodal' locally, follow these steps:
 
-1. Make sure you have Docker installed on your system.
+1. Make sure you have Docker installed on your system with the `docker compose` extension.
 2. Clone this repository: `git clone https://github.com/your-username/postgres-multimodal.git`.
 3. Navigate to the cloned directory: `cd postgres-multimodal`.
-4. Start the Docker containers: `docker-compose up -d`.
+4. Start the Docker containers: `docker compose up -d`.
 5. Wait for the containers to build and be up and running. PostgreSQL will be available on port 5432.
-6. Connect to the PostgreSQL database using your preferred client or command-line tool.
-   - Host: localhost
-   - Port: 5432
-   - Database: postgres
-   - Username: postgres
-   - Password: password
+
+You may then connect to the PostgreSQL database using your preferred client or command-line tool.
+
+- Host: localhost
+- Port: 5432
+- Database: postgres
+- Username: postgres
+- Password: password
+
+Alternatively, you may connect via the docker container, `docker exec -it postgres-multimodal postgres-multimodal-1 psql`
 
 Once connected, you can interact with the database and explore the various extensions and functionalities provided by this multi-modal example.
 
