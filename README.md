@@ -22,7 +22,6 @@ By having a multi-modal database like PostgreSQL, we simplify data integration, 
 - [Dockerfile](./Dockerfile): The Dockerfile used to build the PostgreSQL container. It installs Apache Age and sets up the necessary configurations to allow non super users to interact with it.
 - [migrations/root.changelog.xml](./migrations/root.changelog.xml): The Liquibase changelog file that includes SQL scripts for database migrations.
 - [migrations/sql/00010_initial_database_setup.sql](./migrations/sql/00010_initial_database_setup.sql): SQL script for initializing the database with various extensions and configurations.
-- [README.md](./README.md): This readme file providing an overview of the repository.
 
 ## Usage
 
