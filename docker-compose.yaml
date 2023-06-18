@@ -1,0 +1,34 @@
+version: "3"
+services:
+  pgvector:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        - PG_VERSION=13
+        - APACHE_AGE_VERSION=1.3.0
+        - TIMESCALE_VERSION=2.11.0
+
+    environment:
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - ./migrations/:/migrations/
+    networks:
+      - pgvector
+    ports:
+      - "5432:5432"
+  liquibase:
+    image: liquibase/liquibase
+    command: --hub-mode=off --headless=true --changeLogFile=changelog/root.changelog.xml --url=jdbc:postgresql://pgvector:5432/postgres --username=postgres --password=password update
+    volumes:
+      - ./migrations/:/liquibase/changelog
+    depends_on:
+      - pgvector
+    links:
+      - pgvector
+    networks:
+      - pgvector
+    restart: on-failure
+
+networks:
+  pgvector:
