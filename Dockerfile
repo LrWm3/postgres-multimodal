@@ -4,6 +4,10 @@ ARG TIMESCALE_VERSION=2.11.0
 
 FROM timescale/timescaledb-ha:pg${PG_VERSION}.11-ts${TIMESCALE_VERSION}-oss
 
+ARG PG_VERSION
+ARG APACHE_AGE_VERSION
+ARG TIMESCALE_VERSION
+
 # Switch to root user to install apache age
 USER root
 
