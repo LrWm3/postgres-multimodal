@@ -4,7 +4,7 @@ This repository contains a simple multi-modal example of PostgreSQL, showcasing 
 
 It includes an example Liquibase changelog file to demonstrate how to configure Liquibase to manage database migrations using sql files found in a local directory.
 
-The multi-modal image is based off of timescaledbs' wonderful timescaledb-ha image [dockerhub](https://hub.docker.com/r/timescale/timescaledb-ha), [github](https://github.com/timescale/timescaledb-docker-ha/), which contains all of the extensions except for apache age, and is compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md).
+The multi-modal image is based off of timescaledbs timescaledb-ha image [dockerhub](https://hub.docker.com/r/timescale/timescaledb-ha), [github](https://github.com/timescale/timescaledb-docker-ha/), which contains all of the extensions listed in the 'Features' section besides Apache Age, and is compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md).
 
 ## Contents
 
@@ -32,9 +32,15 @@ You may then connect to the PostgreSQL database using your preferred client or c
 - Username: postgres
 - Password: password
 
-Alternatively, you may connect via the docker container, `docker exec -it postgres-multimodal postgres-multimodal-1 psql`
+Alternatively, you may connect to the database using the running `postgres-multimodal` docker container.
+
+```bash
+docker exec -it postgres-multimodal-postgres-multimodal-1 psql
+```
 
 Once connected, you can interact with the database and explore the various extensions and functionalities provided by this multi-modal example.
+
+The [examples](./examples) directory contains example usage.
 
 ## Features
 
