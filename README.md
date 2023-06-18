@@ -63,7 +63,7 @@ The PostgreSQL image built in this example includes the following extensions to 
 
 Several other minor extensions are also enabled by default.
 
-- "uuid-ossp": Allows generating UUIDs.
+- uuid-ossp: Allows generating UUIDs.
 - pg_trgm: Offers trigram-based similarity matching.
 - pgcrypto: Provides cryptographic functions.
 
