@@ -4,7 +4,17 @@ This repository contains a simple multi-modal example of PostgreSQL, showcasing 
 
 It includes an example Liquibase changelog file to demonstrate how to configure Liquibase to manage database migrations using sql files found in a local directory.
 
-The multi-modal image is based off of timescaledbs timescaledb-ha image [dockerhub](https://hub.docker.com/r/timescale/timescaledb-ha), [github](https://github.com/timescale/timescaledb-docker-ha/), which contains all of the extensions listed in the 'Features' section besides Apache Age, and is compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md).
+The multi-modal image is based off of timescaledbs timescaledb-ha image [dockerhub](https://hub.docker.com/r/timescale/timescaledb-ha), [github](https://github.com/timescale/timescaledb-docker-ha/), which contains all of the extensions listed in the 'Features' section besides Apache Age, and is theoretically compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md), although this has not been tested.
+
+## Purpose
+
+The "postgres-multimodal" project showcases the incredible versatility of PostgreSQL as a multi-modal database. In today's evolving data landscape, databases must adapt and support various architectural types.
+
+The project's purpose is to demonstrate that PostgreSQL is not limited to traditional relational data but can also handle geospatial information, time-series data, graph structures, and more. This opens up endless possibilities for applications and businesses.
+
+Why is this important, you ask? Well, the future of data management is not limited to a single data model. With the rise of IoT devices, geolocation-based applications, social networks, and complex interconnected systems, our data has become more diverse and interconnected than ever before.
+
+By having a multi-modal database like PostgreSQL, we simplify data integration, reduce duplication, and make querying different data types a breeze. Plus, we save costs and improve performance by avoiding the headache of managing separate databases. It's like having the best of both worlds, where we can leverage "the right tool for the job" without giving up the fantastic features we love from good ol' relational databases.
 
 ## Contents
 
