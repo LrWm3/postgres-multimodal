@@ -1,12 +1,17 @@
 # postgres-multimodal
 
-This repository contains a simple multi-modal example of PostgreSQL, showcasing various extensions and functionalities.
+This repository contains a simple multi-modal example of PostgreSQL, showcasing various extensions and functionalities, including AI capabilities.
 
-In addition to powerful extensions to support flexibly shaping and manipulating data, it also includes the PostgresML plugin to tie in additional intelligence and elevate postgres to a ready-to-go SLM platform.
+In addition to powerful extensions to support flexibly shaping and manipulating data, it also includes the PostgresML plugin, which elevates PostgreSQL to a ready-to-go AI platform. With PostgresML, you can seamlessly integrate artificial intelligence and machine learning capabilities into your PostgreSQL database.
 
-It includes an example Liquibase changelog file to demonstrate how to configure Liquibase to manage database migrations using sql files found in a local directory.
 
-The multi-modal image is based off of timescaledbs timescaledb-ha image [dockerhub](https://hub.docker.com/r/timescale/timescaledb-ha), [github](https://github.com/timescale/timescaledb-docker-ha/), which contains all of the extensions listed in the 'Features' section besides Apache Age, and is theoretically compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md), although this has not been tested.
+The multi-modal image is based off of the [timescaledb-ha](https://hub.docker.com/r/timescale/timescaledb-ha) docker image, which contains all of the extensions listed in the 'Features' section besides Apache Age and PostgresML. This example is theoretically compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md), although this has not been tested.
+
+The repository also includes an example Liquibase changelog file to demonstrate how to configure Liquibase to manage database migrations using SQL files found in a local directory. This allows you to easily version and control your database schema changes while integrating AI capabilities through PostgresML.
+
+By combining the versatility of multi-modal data management with the power of AI, this repository provides you with a solid foundation for building intelligent data applications. Whether you are working on advanced analytics, predictive modeling, or complex machine learning tasks, PostgreSQL with PostgresML empowers you to leverage the data stored in the database and extract valuable insights.
+
+Feel free to explore, experiment, and extend the capabilities of PostgreSQL with AI using this repository. Join us in unlocking the potential of AI-driven data management and analytics with PostgreSQL's flexibility and PostgresML's intelligence. Let's embark on a journey of innovation, where data meets AI and possibilities are limitless.
 
 ## Purpose
 
@@ -59,6 +64,7 @@ The [examples](./examples) directory contains example usage.
 
 The PostgreSQL image built in this example includes the following extensions to enable multi-modal behavior:
 
+- [postgresml](https://postgresml.org/docs/guides/setup/v2/installation): Enables AI workloads at the database level.
 - [postgis](https://postgis.net): Enables geospatial capabilities.
 - [timescaledb](https://www.timescale.com/): Provides support for time-series data.
 - [pgvector](https://github.com/pgvector/pgvector): Supports vector-based operations used for similarity and semantic search.
