@@ -2,19 +2,23 @@
 
 This repository contains a simple multi-modal example of PostgreSQL, showcasing various extensions and functionalities.
 
+In addition to powerful extensions to support flexibly shaping and manipulating data, it also includes the PostgresML plugin to tie in additional intelligence and elevate postgres to a ready-to-go SLM platform.
+
 It includes an example Liquibase changelog file to demonstrate how to configure Liquibase to manage database migrations using sql files found in a local directory.
 
 The multi-modal image is based off of timescaledbs timescaledb-ha image [dockerhub](https://hub.docker.com/r/timescale/timescaledb-ha), [github](https://github.com/timescale/timescaledb-docker-ha/), which contains all of the extensions listed in the 'Features' section besides Apache Age, and is theoretically compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md), although this has not been tested.
 
 ## Purpose
 
-The "postgres-multimodal" project showcases the incredible versatility of PostgreSQL as a multi-modal database. In today's evolving data landscape, databases must adapt and support various architectural types.
+The "postgres-multimodal" project, including PostgresML, showcases the incredible versatility of PostgreSQL as a multi-modal database and AI platform. In today's evolving data landscape, databases must adapt and support various architectural types to enable powerful AI-driven data analytics.
 
-The project's purpose is to demonstrate that PostgreSQL is not limited to traditional relational data but can also handle geospatial information, time-series data, graph structures, and more. This opens up endless possibilities for applications and businesses.
+The project's purpose is to demonstrate that PostgreSQL is not limited to traditional relational data but can also handle geospatial information, time-series data, graph structures, and more. With the addition of PostgresML, it becomes a comprehensive AI platform that empowers users to perform advanced analytics and machine learning directly within the database environment.
 
-Why is this important, you ask? Well, the future of data management is not limited to a single data model. With the rise of IoT devices, geolocation-based applications, social networks, and complex interconnected systems, our data has become more diverse and interconnected than ever before.
+Why is this important, you ask? Well, the future of data management and analytics is not limited to a single data model or separate AI platforms. With the rise of IoT devices, geolocation-based applications, social networks, and complex interconnected systems, our data has become more diverse and interconnected than ever before. By combining the power of a multi-modal database like PostgreSQL with AI capabilities, we unlock new opportunities for businesses to gain valuable insights, make data-driven decisions, and drive innovation.
 
-By having a multi-modal database like PostgreSQL, we simplify data integration, reduce duplication, and make querying different data types a breeze. Plus, we save costs and improve performance by avoiding the headache of managing separate databases. It's like having the best of both worlds, where we can leverage "the right tool for the job" without giving up the fantastic features we love from good ol' relational databases.
+By having a multi-modal database like PostgreSQL, we simplify data integration, reduce duplication, and make querying different data types a breeze. Plus, with the integrated AI capabilities of PostgresML, we can perform advanced analytics, predictive modeling, and complex machine learning tasks directly on the data stored in the database. This eliminates the need for separate AI platforms and streamlines the workflow, resulting in enhanced efficiency and faster time-to-insight.
+
+So, join us on this exciting journey as we leverage the power of PostgreSQL and PostgresML to enable powerful AI-driven data analytics. Together, we'll unlock the full potential of data, drive innovation, and shape the future of intelligent data management and analytics. Get ready to embark on a transformative experience where the boundaries of traditional databases and AI platforms blur, opening up a new era of possibilities for businesses and AI enthusiasts alike.
 
 ## Contents
 
