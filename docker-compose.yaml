@@ -11,6 +11,10 @@ services:
 
     environment:
       - POSTGRES_PASSWORD=password
+    command: 
+      - postgres
+      - -c
+      - config-file=/etc/postgresql.conf
     volumes:
       - ./migrations/:/migrations/
     networks:

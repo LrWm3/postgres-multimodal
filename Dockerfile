@@ -24,22 +24,29 @@ RUN cd apache-age-${APACHE_AGE_VERSION} && make PG_CONFIG=/usr/lib/postgresql/${
 RUN ln -s /usr/lib/postgresql/${PG_VERSION}/lib/age.so /usr/lib/postgresql/${PG_VERSION}/lib/plugins/age.so
 
 # PostgresML
+
+# fixme - clean up this, could install a lot earlier.
 RUN add-apt-repository ppa:deadsnakes/ppa
 RUN apt update
-RUN apt-get install -y python3.11 python3-pip
-RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.11 1
+RUN apt-get install -y python3.10 python3-pip
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+RUN update-alternatives --config python3
 RUN curl -LJO https://raw.githubusercontent.com/postgresml/postgresml/master/pgml-extension/requirements.txt
+RUN pip3 install --upgrade --force-reinstall setuptools wheel
+ENV export SETUPTOOLS_USE_DISTUTILS stdlib
 RUN pip3 install -r requirements.txt
 
 RUN echo "deb [trusted=yes] https://apt.postgresml.org $(lsb_release -cs) main" | tee -a /etc/apt/sources.list
 RUN apt-get update && apt-get install -y postgresql-pgml-${PG_VERSION}
-
-# PostgresML requires shared_preload_libraries updated
-COPY config/postgresql.conf /home/postgres/pgdata/data/postgresql.conf
+# fixme - probably don't need
+RUN apt install timescaledb-toolkit-postgresql-${PG_VERSION}
 
 # Back to postgres user
 USER postgres
 
+# PostgresML requires shared_preload_libraries updated
+COPY config/postgresql.conf /etc/postgresql.conf
+COPY config/pgml.control /usr/share/postgresql/12/extension/pgml.control
 # Remaining set-up steps once running:
 # CREATE EXTENSION age;
 # SET search_path = ag_catalog, "$user", public;
