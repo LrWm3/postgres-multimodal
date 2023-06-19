@@ -4,11 +4,6 @@ This repository contains a simple multi-modal example of PostgreSQL, showcasing 
 
 In addition to powerful extensions to support flexibly shaping and manipulating data, it also includes the PostgresML plugin, which elevates PostgreSQL to a ready-to-go AI platform. With PostgresML, you can seamlessly integrate artificial intelligence and machine learning capabilities into your PostgreSQL database.
 
-
-The multi-modal image is based off of the [timescaledb-ha](https://hub.docker.com/r/timescale/timescaledb-ha) docker image, which contains all of the extensions listed in the 'Features' section besides Apache Age and PostgresML. This example is theoretically compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md), although this has not been tested.
-
-The repository also includes an example Liquibase changelog file to demonstrate how to configure Liquibase to manage database migrations using SQL files found in a local directory. This allows you to easily version and control your database schema changes while integrating AI capabilities through PostgresML.
-
 By combining the versatility of multi-modal data management with the power of AI, this repository provides you with a solid foundation for building intelligent data applications. Whether you are working on advanced analytics, predictive modeling, or complex machine learning tasks, PostgreSQL with PostgresML empowers you to leverage the data stored in the database and extract valuable insights.
 
 Feel free to explore, experiment, and extend the capabilities of PostgreSQL with AI using this repository. Join us in unlocking the potential of AI-driven data management and analytics with PostgreSQL's flexibility and PostgresML's intelligence. Let's embark on a journey of innovation, where data meets AI and possibilities are limitless.
@@ -92,6 +87,12 @@ SET search_path = ag_catalog, "$user", public;
 ```
 
 For more information on Apache AGE, see the official [Apache Age Documentation](https://age.apache.org/age-manual/master/intro/setup.html).
+
+## Docker and Helm
+
+The multi-modal image is based off of the [timescaledb-ha](https://hub.docker.com/r/timescale/timescaledb-ha) docker image, which contains all of the extensions listed in the 'Features' section besides Apache Age and PostgresML. This example is theoretically compatible with the [timescaledb high-availability helm chart](https://github.com/timescale/helm-charts/blob/main/charts/timescaledb-single/README.md), although this has not been tested.
+
+The repository also includes an example Liquibase changelog file to demonstrate how to configure Liquibase to manage database migrations using SQL files found in a local directory. This allows you to easily version and control your database schema changes while integrating AI capabilities through PostgresML.
 
 ## Contributing
 
